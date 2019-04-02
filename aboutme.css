@@ -1,0 +1,31 @@
+body {
+    color: white;
+    background-color: #5c5d60;
+    font: 1em "Fira Sans", sans-serif;
+}
+
+h1, h3 {
+    color: #8fa7ef;
+    font-family: Georgia, sans-serif;
+}
+
+img {
+    width : 600px;
+    height: 400px;
+}
+
+dl {
+    margin-top: 0;
+}
+
+dt {
+    color: yellow;
+}
+
+a:visited {
+    color: black;
+}
+
+a:link {
+    color: darkred;
+}
