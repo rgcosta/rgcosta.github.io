@@ -9,7 +9,7 @@ h1, h3 {
     font-family: Georgia, sans-serif;
 }
 
-img {
+img.mood{
     width : 600px;
     height: 400px;
 }
