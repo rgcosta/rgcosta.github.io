@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=“width=device-width, initial-scale=1.0"/>
+    <link href="task.css" type="text/css" rel="stylesheet"/>
+    <title>Task List</title>
+</head>
+<body>
+    <form action="#" method="get" autocomplete="on">
+        <label for="task" >Task</label>
+        <input type="text" id="task" name="task" placeholder="Return library books" size="80" maxlength="78"/>
+        <label for="requiredby">Required By</label>
+        <input type="date" id="requiredby" name="requiredby" />
+        <label for="category">Required By</label>
+        <select name="category" id="category">
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+        </select>
+        <input type="submit" value="Save Task" class="button">
+        <input type="reset" value="Clear Task" class="button"/>
+    </form>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Due</th>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td>Reeturn library books</td>
+            <td>2013-10-14</td>
+            <td>Personal</td>
+        </tr>
+        <tr>
+            <td>Perform project demo to stakeholders</td>
+            <td>2013-10-14</td>
+            <td>Work</td>
+        </tr>
+        <tr>
+            <td>Meet friends for dinner</td>
+            <td>2013-10-14</td>
+            <td>Personal</td>
+        </tr>
+    </table>
+    <input type="button" value="Add Task" class="button"/>
+
+    <div class="footer">
+        <a href="https://validator.w3.org/check/referer">
+            <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="W3 Validator">
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png" alt="W3 Validator CSS">
+        </a>
+    </div>
+</body>
+</html>
