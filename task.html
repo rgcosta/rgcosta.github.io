@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=“width=device-width, initial-scale=1.0"/>
     <link href="task.css" type="text/css" rel="stylesheet"/>
     <title>Task List</title>
+    <script>
+        if ( $('[type="date"]').prop('type') != 'date' ) {
+            $('[type="date"]').datepicker();
+        }
+    </script>
 </head>
 <body>
     <form action="#" method="get" autocomplete="on">
