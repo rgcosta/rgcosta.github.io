@@ -1,0 +1,50 @@
+body {
+    font: 1em "Fira Sans", sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid grey;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+tr:first-child {
+    background-color: black;
+    color: white;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+input {
+    padding: 5px;
+}
+
+select {
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    border: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 10px;
+    text-align: right;
+}
