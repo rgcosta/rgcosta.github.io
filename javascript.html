@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Intro</title>
+    <script>
+        /* runs test to see if expected argument is === to value returned by function2test argument */
+        function myFunctionTest(expected, function2test) {
+
+            var result = function2test();
+
+            if (Array.isArray(expected)) {
+                expected = expected.join('');
+            }
+
+            if (Array.isArray(result)) {
+                result = result.join('');
+            }
+
+            if (expected === result) {
+                return "TEST SUCCEEDED";
+            } else {
+                return "TEST FAILED.  Expected " + expected + " found " + function2test();
+            }
+        }
+
+        /* max returns the maximum of 2 arguments */
+        function max(a, b) {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+        console.log("Expected output of max(20,10) is 20  " + myFunctionTest(20, function () {
+            return max(20, 10);
+        }));
+
+        /* Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them. */
+        function maxOfThree(a, b, c) {
+            return max(max(a,b), c);
+        }
+        console.log("Expected output of maxOfThree(10, 10, 15) is 15  " + myFunctionTest(15, function () {
+            return maxOfThree(10, 10, 15);
+        }));
+
+        /* Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel,
+        false otherwise. Five of the 26 alphabet letters are vowels: A, E, I, O, and U.*/
+        function isVowel(char) {
+            return char.charAt(0) === "A" || char.charAt(0) === "E" || char.charAt(0) === "I" || char.charAt(0) === "O"
+                    || char.charAt(0) === "U";
+        }
+        console.log("Expected output of isVowel(A) is true  " + myFunctionTest(true, function () {
+            return isVowel("A");
+        }));
+
+        /* Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers
+        in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
+         */
+        function sum(arr) {
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+        function multiply(arr) {
+            var total = 1;
+            for (var i = 0; i < arr.length; i++) {
+                total *= arr[i];
+            }
+            return total;
+        }
+        console.log("Expected output of sum([1,2,3,4]) is 10 " + myFunctionTest(10, function () {
+            return sum([1,2,3,4]);
+        }));
+        console.log("Expected output of multiply([1,2,3,4]) is 24 " + myFunctionTest(24, function () {
+            return multiply([1,2,3,4]);
+        }));
+
+
+        /* Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should
+        return the string "ratset gaj". */
+        function reverse(str) {
+            var reverse = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                reverse += str.charAt(i);
+            }
+            return reverse;
+        }
+        console.log("Expected output of reverse(\"jag testar\") is \"ratset gaj\" " + myFunctionTest("ratset gaj", function () {
+            return reverse("jag testar");
+        }));
+
+        /* Write a function findLongestWord() that takes an array of words and returns the length of the longest one. */
+        function findLogestWord(arr) {
+            var longestLength = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].length > longestLength)
+                    longestLength = arr[i].length;
+            }
+            return longestLength;
+        }
+        console.log("Expected output of findLogestWord([\"cat\", \"four\", \"dog\"]) is 4 " + myFunctionTest(4, function () {
+            return findLogestWord(["cat", "four", "dog"]);
+        }));
+
+        /* Write a function filterLongWords() that takes an array of words and an integer i and returns the array of
+        words that are longer than i. */
+        function filterLongWords(arr, i) {
+            var longerArr = [];
+            var k = 0;
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[j].length > i) {
+                    longerArr[k] = arr[j];
+                    k++;
+                }
+            }
+            return longerArr;
+        }
+        console.log("Expected output of filterLongWords([\"cat\", \"four\", \"dog\", \"hours\"], 3) is [\"four\", \"hours\"] " +
+            myFunctionTest(["four", "hours"], function () {
+            return filterLongWords(["cat", "four", "dog", "hours"], 3);
+        }));
+
+        /* Modify the jsfiddle on the map/filter/reduce slide as follows:
+        a) multiply each element by 10;
+        b) return array with all elements equal to 3;
+        c) return the product of all elements;
+         */
+        function multiplyBy10(arr) {
+            return arr.map(function (value) {
+                return value * 10;
+            });
+        }
+        console.log("Expected output of multiplyBy10([1,2,3,4]) is [10,20,30,40] " + myFunctionTest([10,20,30,40], function () {
+            return multiplyBy10([1,2,3,4]);
+        }));
+
+        function EqualsTo3(arr) {
+            return arr.filter(function (value) {
+                return value == 3;
+            });
+        }
+        console.log("Expected output of EqualsTo3([1,2,3,4,3]) is [3,3] " + myFunctionTest([3,3], function () {
+            return EqualsTo3([1,2,3,4,3]);
+        }));
+
+        function product(arr) {
+            return arr.reduce(function (previous, current) {
+                return previous*current;
+            });
+        }
+        console.log("Expected output of product([65, 44, 12, 4]) is 137280 " + myFunctionTest(137280, function () {
+            return product([65, 44, 12, 4]);
+        }));
+        console.assert(product([65, 44, 12, 4]) === 137280, "Fail!! Check line 157");
+
+
+    </script>
+</head>
+<body>
+    Check the browser console for the results (Ctrl + Shit + I on Chrome)
+</body>
+</html>
