@@ -38,14 +38,13 @@ window.onload = function () {
     let frames;
     startBtn.onclick = function () {
         frames = textarea.value;
+        this.disabled = true;
+        animation.disabled = true;
+        stopBtn.disabled = false;
         runAnimation();
     };
 
     function runAnimation() {
-        this.disabled = true;
-        animation.disabled = true;
-        stopBtn.disabled = false;
-
         timer = setInterval(function () {
             if (frames.indexOf("=====\n") === -1) {
                 textarea.value = frames;    //last frame
