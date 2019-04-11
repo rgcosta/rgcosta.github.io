@@ -1,0 +1,9 @@
+label, fieldset {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#error {
+    color: red;
+}
